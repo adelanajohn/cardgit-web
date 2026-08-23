@@ -3,19 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Real screenshots — each matched to its carousel slide
-import imgAppointment from '@/assets/cards/Digital Business Card QR Code Landing page.png'
+import imgAppointment from '@/assets/cards/Appointment Booking Landing page (2).png'
 import imgLeadCapture from '@/assets/cards/Smart Lead Capture Landing Page.png'
 import imgAnalytics from '@/assets/cards/Business Card Analytics Landing Page.png'
 import imgMatchmaking from '@/assets/events/Smart Networking Landing Page.png'
 import imgGamification from '@/assets/events/Gamification Landing Page (1).png'
 
 // Additional card screenshots
-import imgQRCode from '@/assets/cards/Social Media Integration Landing page.png'
+import imgQRCode from '@/assets/cards/Digital Business Card QR Code Landing page.png'
 import imgShowcase from '@/assets/cards/Interactive Product & Service Showcase Landing Page.png'
 import imgMultiCard from '@/assets/cards/Multiple Digital Business Cards Landing page.png'
 import imgSocialMedia from '@/assets/cards/Social Media Integration Landing page.png'
 import imgTeamMgmt from '@/assets/cards/Team Card Management Landing page.png'
-import imgBenefit from '@/assets/cards/card-image.png'
+import imgBenefit from '@/assets/cards/Benefit Desktop (1).png'
 
 // Additional events screenshots
 import imgAttendeeNetworking from '@/assets/events/Attendee Networking Landing Page.png'
