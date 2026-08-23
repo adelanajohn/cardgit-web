@@ -3,11 +3,20 @@ import SEO from '@/components/SEO'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { pageSEO, SITE_URL } from '@/data/seo'
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+    </svg>
+  )
+}
+
 const SOCIAL_LINKS = [
-  { icon: Facebook, href: 'https://www.facebook.com/share/1BPnySukTD/', label: 'Facebook' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/company/cardgit', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://instagram.com/cardgit', label: 'Instagram' },
-  { icon: Youtube, href: 'https://youtube.com/@cardgit', label: 'YouTube' },
+  { icon: Linkedin,    href: 'https://www.linkedin.com/company/cardgit',   label: 'LinkedIn'  },
+  { icon: Instagram,   href: 'https://instagram.com/cardgit',               label: 'Instagram' },
+  { icon: Youtube,     href: 'https://youtube.com/@cardgit',                label: 'YouTube'   },
+  { icon: TikTokIcon,  href: 'https://www.tiktok.com/@cardgit',             label: 'TikTok'    },
+  { icon: Facebook,    href: 'https://www.facebook.com/share/1BPnySukTD/', label: 'Facebook'  },
 ]
 
 const CONTACT_REASONS = [
@@ -169,21 +178,6 @@ export default function Contact() {
 
             {/* Sidebar — takes 2 cols */}
             <AnimatedSection delay={0.15} className="lg:col-span-2 space-y-6">
-
-              {/* Direct email card */}
-              <div className="bg-[var(--bg-surface)] border border-slate-200 dark:border-slate-700/50 rounded-2xl p-6">
-                <div className="w-10 h-10 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center mb-4">
-                  <Mail className="w-5 h-5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
-                </div>
-                <h3 className="font-bold text-[var(--text-primary)] mb-1">Prefer email?</h3>
-                <p className="text-sm text-[var(--text-secondary)] mb-3">Reach us directly — we respond within one business day.</p>
-                <a
-                  href="mailto:info@cardgit.com"
-                  className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none rounded"
-                >
-                  info@cardgit.com
-                </a>
-              </div>
 
               {/* Social card */}
               <div className="bg-[var(--bg-surface)] border border-slate-200 dark:border-slate-700/50 rounded-2xl p-6">
