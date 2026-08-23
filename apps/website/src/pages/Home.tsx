@@ -130,16 +130,6 @@ export default function Home() {
 
             {/* Copy — takes more space on mobile */}
             <div className="w-full lg:flex-1 lg:min-w-0">
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="inline-flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur border border-indigo-200/60 dark:border-indigo-700/40 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold text-indigo-700 dark:text-indigo-300 shadow-sm"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-                GDPR Ready · UK-Based · Used by Professionals
-              </motion.div>
-
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[var(--text-primary)] leading-[1.08] mb-5">
                 {[['Your', 'Digital', 'Identity.', 'default'], ['Smarter', 'Events.', '', 'gradient'], ['Stronger', 'Connections.', '', 'default']].map((group, gi) => (
                   <span key={gi} className="block">
