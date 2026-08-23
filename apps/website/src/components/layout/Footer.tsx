@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Linkedin, Instagram, Youtube, Mail, MapPin } from 'lucide-react'
+import { Facebook, Linkedin, Instagram, Youtube } from 'lucide-react'
 import cardgitIcon from '@/assets/icon.png'
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+    </svg>
+  )
+}
+
 const SOCIAL_LINKS = [
-  { label: 'Facebook', href: 'https://www.facebook.com/share/1BPnySukTD/', icon: Facebook },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/cardgit', icon: Linkedin },
-  { label: 'Instagram', href: 'https://instagram.com/cardgit', icon: Instagram },
-  { label: 'YouTube', href: 'https://youtube.com/@cardgit', icon: Youtube },
+  { label: 'LinkedIn',  href: 'https://www.linkedin.com/company/cardgit',   icon: Linkedin   },
+  { label: 'Instagram', href: 'https://instagram.com/cardgit',               icon: Instagram  },
+  { label: 'YouTube',   href: 'https://youtube.com/@cardgit',                icon: Youtube    },
+  { label: 'TikTok',    href: 'https://www.tiktok.com/@cardgit',             icon: TikTokIcon },
+  { label: 'Facebook',  href: 'https://www.facebook.com/share/1BPnySukTD/', icon: Facebook   },
 ]
 
 const FOOTER_LINKS = [
@@ -42,7 +51,6 @@ const FOOTER_LINKS = [
   },
 ]
 
-// Entity definition paragraph — visually hidden but accessible to crawlers
 const ENTITY_PARAGRAPH =
   'CardGit is a digital identity and professional networking company based in London, United Kingdom. It operates two products: CardGit, a digital business card platform that lets professionals share their profile via QR code or link; and CardGit Events, a networking-first event management platform for conferences, summits, and business networking events. CardGit is used by professionals, SMEs, and enterprise teams across the UK and internationally. The company can be contacted at info@cardgit.com.'
 
@@ -51,6 +59,7 @@ export default function Footer() {
     <footer className="bg-[var(--bg-surface)] border-t border-slate-200 dark:border-slate-700/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link
@@ -63,11 +72,10 @@ export default function Footer() {
             </Link>
 
             <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-5 max-w-xs">
-              Digital business cards and networking-first event management — built for modern professionals and UK businesses.
+              Digital business cards and networking-first event management — built for modern professionals.
             </p>
 
-            {/* Social links */}
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-3">
               {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
@@ -80,22 +88,6 @@ export default function Footer() {
                   <Icon className="w-5 h-5" aria-hidden="true" />
                 </a>
               ))}
-            </div>
-
-            <div className="space-y-2 text-sm text-[var(--text-secondary)]">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                <span>London, United Kingdom</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                <a
-                  href="mailto:info@cardgit.com"
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none rounded"
-                >
-                  info@cardgit.com
-                </a>
-              </div>
             </div>
           </div>
 
@@ -138,7 +130,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Entity paragraph for crawlers */}
         <p className="sr-only">{ENTITY_PARAGRAPH}</p>
       </div>
     </footer>

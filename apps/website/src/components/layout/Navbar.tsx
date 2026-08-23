@@ -115,6 +115,7 @@ export default function Navbar() {
             { label: 'Pricing', to: '/pricing' },
             { label: 'Use Cases', to: '/use-cases' },
             { label: 'Blog', to: '/blog' },
+            { label: 'Contact', to: '/contact' },
           ].map((link) => (
             <Link
               key={link.to}
@@ -200,6 +201,7 @@ export default function Navbar() {
             { label: 'Use Cases', to: '/use-cases' },
             { label: 'Blog', to: '/blog' },
             { label: 'About', to: '/about' },
+            { label: 'Contact', to: '/contact' },
           ].map((link) => (
             <Link
               key={link.to}

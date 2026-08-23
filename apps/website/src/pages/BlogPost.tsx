@@ -114,6 +114,34 @@ export default function BlogPost() {
             />
           </AnimatedSection>
 
+          {/* CTA Banner */}
+          <AnimatedSection delay={0.2} className="mt-16">
+            <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 p-8 text-center">
+              <h2 className="text-2xl font-black text-white mb-3">
+                Ready to upgrade your professional networking?
+              </h2>
+              <p className="text-indigo-100 mb-6 max-w-xl mx-auto text-sm leading-relaxed">
+                CardGit gives you a digital business card that updates instantly, tracks who engages with you, and captures leads automatically — free to start.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                  href="https://app.cardgit.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50 transition-colors text-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+                >
+                  Create your free card
+                </a>
+                <a
+                  href="/pricing"
+                  className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-colors text-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+                >
+                  See plans & pricing
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
+
           {/* Post navigation */}
           {(prevPost || nextPost) && (
             <AnimatedSection delay={0.2} className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700/50">
