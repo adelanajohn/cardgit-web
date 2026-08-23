@@ -37,19 +37,19 @@ interface Slide {
   visual: React.ReactNode
 }
 
-/** Shared image wrapper — consistent sizing, rounded corners, drop shadow */
+/** Shared image wrapper — fixed height matches events.png (495px) so all slides are uniform */
 function SlideImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 h-[260px] sm:h-[320px] lg:h-[360px]">
         <img
           src={src}
           alt={alt}
-          className="w-full h-auto block"
+          className="w-full h-full object-cover object-top"
           loading="eager"
           decoding="async"
         />
-        {/* subtle overlay so image sits well on dark bg */}
+        {/* subtle overlay */}
         <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" aria-hidden="true" />
       </div>
     </div>
