@@ -9,6 +9,23 @@ import imgAnalytics from '@/assets/cards/Business Card Analytics Landing Page.pn
 import imgMatchmaking from '@/assets/events/Smart Networking Landing Page.png'
 import imgGamification from '@/assets/events/Gamification Landing Page (1).png'
 
+// Additional card screenshots
+import imgQRCode from '@/assets/cards/Digital Business Card QR Code Landing page.png'
+import imgShowcase from '@/assets/cards/Interactive Product & Service Showcase Landing Page.png'
+import imgMultiCard from '@/assets/cards/Multiple Digital Business Cards Landing page.png'
+import imgSocialMedia from '@/assets/cards/Social Media Integration Landing page.png'
+import imgTeamMgmt from '@/assets/cards/Team Card Management Landing page.png'
+import imgBenefit from '@/assets/cards/Benefit Desktop (1).png'
+
+// Additional events screenshots
+import imgAttendeeNetworking from '@/assets/events/Attendee Networking Landing Page.png'
+import imgChallenges from '@/assets/events/Challenges Landing Page.png'
+import imgEventAgenda from '@/assets/events/Event Agenda Landing Page (3).png'
+import imgLeaderboard from '@/assets/events/Leaderboard Landing Page.png'
+import imgLivePoll from '@/assets/events/Live Poll Landing Page.png'
+import imgSocialFeed from '@/assets/events/Social Feed Landing Page.png'
+import imgSpeakerLineup from '@/assets/events/Speaker Line-up Landing Page.png'
+
 interface Slide {
   id: string
   badge: string
@@ -137,6 +154,272 @@ const SLIDES: Slide[] = [
       <SlideImage
         src={imgGamification}
         alt="CardGit Events gamification feature showing live leaderboard with points, badges, and achievement challenges"
+      />
+    ),
+  },
+
+  // ── Additional Digital Business Card slides ──────────────
+
+  {
+    id: 'qr-code',
+    badge: 'Digital Business Cards',
+    title: 'QR Code\nSharing',
+    subtitle: 'Share your complete professional profile with a single scan — no app required.',
+    bullets: [
+      'Every card generates a unique QR code and shareable link instantly.',
+      'Anyone can view your profile without downloading an app.',
+      'Share in person, in email signatures, on slides, or via message.',
+      'Works on any device — smartphone, tablet, or desktop browser.',
+    ],
+    gradient: 'from-[#0a0a1a] via-[#0f1635] to-[#0a1628]',
+    accentColor: '#60a5fa',
+    visual: (
+      <SlideImage
+        src={imgQRCode}
+        alt="CardGit digital business card QR code sharing feature showing a scannable code linked to a professional profile"
+      />
+    ),
+  },
+  {
+    id: 'showcase',
+    badge: 'Digital Business Cards',
+    title: 'Product &\nService Showcase',
+    subtitle: 'Turn your card into an interactive catalogue with Buy, Enquire, and Book Now buttons.',
+    bullets: [
+      'Feature products and services with images, descriptions, and pricing.',
+      'Add direct call-to-action buttons — Buy, Enquire, Book Now.',
+      'Update your showcase instantly — no reprinting, no app update.',
+      'Ideal for freelancers, agencies, consultants, and product businesses.',
+    ],
+    gradient: 'from-[#0a1a0a] via-[#162816] to-[#0a1f1a]',
+    accentColor: '#4ade80',
+    visual: (
+      <SlideImage
+        src={imgShowcase}
+        alt="CardGit interactive product and service showcase showing product cards with CTA buttons on a digital business card"
+      />
+    ),
+  },
+  {
+    id: 'multiple-cards',
+    badge: 'Digital Business Cards',
+    title: 'Multiple\nCards',
+    subtitle: 'Create separate cards for every context — business, personal, events, and more.',
+    bullets: [
+      'Different cards for different audiences — each with its own QR code.',
+      'Switch between cards and share the right identity at the right time.',
+      'Separate cards for business, personal brand, events, or side projects.',
+      'All cards managed from a single CardGit account.',
+    ],
+    gradient: 'from-[#1a0a1a] via-[#2a1040] to-[#1a0835]',
+    accentColor: '#e879f9',
+    visual: (
+      <SlideImage
+        src={imgMultiCard}
+        alt="CardGit multiple digital business cards feature showing several cards for different contexts in one account"
+      />
+    ),
+  },
+  {
+    id: 'social-media',
+    badge: 'Digital Business Cards',
+    title: 'Social Media\nIntegration',
+    subtitle: 'All your social profiles in one place — LinkedIn, WhatsApp, Instagram, TikTok, and more.',
+    bullets: [
+      'Link LinkedIn, WhatsApp, Instagram, TikTok, Facebook, X, and YouTube.',
+      'All social profiles displayed as tap-to-open buttons on your card.',
+      'Add or remove social links instantly — no reprinting required.',
+      'Drive traffic to the platforms most relevant to your audience.',
+    ],
+    gradient: 'from-[#0a0a1a] via-[#1a0a30] to-[#0f0a20]',
+    accentColor: '#f472b6',
+    visual: (
+      <SlideImage
+        src={imgSocialMedia}
+        alt="CardGit social media integration showing LinkedIn, WhatsApp, Instagram and other social links on a digital card"
+      />
+    ),
+  },
+  {
+    id: 'team-management',
+    badge: 'Digital Business Cards',
+    title: 'Team\nManagement',
+    subtitle: 'Manage every employee card from one dashboard — consistent branding at scale.',
+    bullets: [
+      'Define brand templates that all employee cards inherit automatically.',
+      'Add, update, or deactivate staff cards from a central admin dashboard.',
+      'Lock brand-sensitive fields while allowing personal detail edits.',
+      'Aggregate analytics across the entire team in one report.',
+    ],
+    gradient: 'from-[#0a1020] via-[#101828] to-[#0a1520]',
+    accentColor: '#38bdf8',
+    visual: (
+      <SlideImage
+        src={imgTeamMgmt}
+        alt="CardGit team card management dashboard showing centralised control of all employee digital business cards"
+      />
+    ),
+  },
+  {
+    id: 'benefit',
+    badge: 'Digital Business Cards',
+    title: 'Professional\nIdentity',
+    subtitle: 'Your complete professional identity — always up to date, always shareable.',
+    bullets: [
+      'One link contains your complete professional identity and offerings.',
+      'Always current — update once and every QR code and link reflects the change.',
+      'GDPR-conscious data collection for UK and EU professionals.',
+      'Eco-friendly — replace thousands of printed cards with one digital card.',
+    ],
+    gradient: 'from-[#080818] via-[#0f1228] to-[#080a1a]',
+    accentColor: '#818cf8',
+    visual: (
+      <SlideImage
+        src={imgBenefit}
+        alt="CardGit digital business card benefit overview showing a complete professional profile with analytics and lead capture"
+      />
+    ),
+  },
+
+  // ── Additional CardGit Events slides ─────────────────────
+
+  {
+    id: 'attendee-networking',
+    badge: 'CardGit Events',
+    title: 'Attendee\nNetworking Hub',
+    subtitle: 'A dedicated space for attendees to discover, connect, and message each other.',
+    bullets: [
+      'Browse all attendees with filtering by industry, role, and interests.',
+      'Send connection requests and direct messages within the event app.',
+      'Book 1-to-1 meetings directly from another attendee\'s profile.',
+      'View your connection history and interaction summary post-event.',
+    ],
+    gradient: 'from-[#150530] via-[#200a50] to-[#0f0328]',
+    accentColor: '#a78bfa',
+    visual: (
+      <SlideImage
+        src={imgAttendeeNetworking}
+        alt="CardGit Events attendee networking hub showing attendee discovery, connection requests, and messaging interface"
+      />
+    ),
+  },
+  {
+    id: 'challenges',
+    badge: 'CardGit Events',
+    title: 'Event\nChallenges',
+    subtitle: 'Set goals and challenges that motivate attendees to network and engage actively.',
+    bullets: [
+      'Create custom challenges — meet 5 new people, attend 3 sessions, ask a question.',
+      'Attendees earn points and badges when they complete each challenge.',
+      'Challenges can be tied to sponsor booths for measurable exhibitor ROI.',
+      'Configure challenges independently for each event format and audience.',
+    ],
+    gradient: 'from-[#1a0800] via-[#2a1200] to-[#1a0c00]',
+    accentColor: '#fbbf24',
+    visual: (
+      <SlideImage
+        src={imgChallenges}
+        alt="CardGit Events challenges feature showing custom networking challenges with points and completion tracking"
+      />
+    ),
+  },
+  {
+    id: 'event-agenda',
+    badge: 'CardGit Events',
+    title: 'Event\nSchedule Builder',
+    subtitle: 'Build multi-track agendas with drag-and-drop simplicity and reusable templates.',
+    bullets: [
+      'Drag-and-drop schedule builder supports sessions, tracks, and rooms.',
+      'Reusable session templates speed up agenda creation for recurring formats.',
+      'Attendees build personal schedules from the full agenda.',
+      'Real-time updates — changes push immediately to all attendee devices.',
+    ],
+    gradient: 'from-[#001a10] via-[#002818] to-[#001a14]',
+    accentColor: '#34d399',
+    visual: (
+      <SlideImage
+        src={imgEventAgenda}
+        alt="CardGit Events schedule builder showing a multi-track event agenda with drag-and-drop session management"
+      />
+    ),
+  },
+  {
+    id: 'leaderboard',
+    badge: 'CardGit Events',
+    title: 'Live\nLeaderboard',
+    subtitle: 'A real-time ranking that keeps every attendee engaged throughout the event.',
+    bullets: [
+      'Points accumulate in real time as attendees network, attend, and engage.',
+      'Leaderboard visible throughout the event — drives friendly competition.',
+      'Top performers can be recognised publicly during keynotes and breaks.',
+      'Resets per event — every attendee starts fresh each time.',
+    ],
+    gradient: 'from-[#1a0800] via-[#2d1400] to-[#1a0a00]',
+    accentColor: '#f97316',
+    visual: (
+      <SlideImage
+        src={imgLeaderboard}
+        alt="CardGit Events live leaderboard showing ranked attendees with points, names, and achievement badges"
+      />
+    ),
+  },
+  {
+    id: 'live-polls',
+    badge: 'CardGit Events',
+    title: 'Live\nPolls',
+    subtitle: 'Push real-time polls during sessions — get instant audience responses on screen.',
+    bullets: [
+      'Create polls in advance or spontaneously during any session.',
+      'Results display immediately on organiser and attendee screens.',
+      'Multiple poll types: single choice, multiple choice, word cloud, rating.',
+      'Use polls to drive decisions, gauge sentiment, or energise the room.',
+    ],
+    gradient: 'from-[#001828] via-[#002035] to-[#001525]',
+    accentColor: '#22d3ee',
+    visual: (
+      <SlideImage
+        src={imgLivePoll}
+        alt="CardGit Events live poll feature showing an active poll with real-time results displayed to attendees"
+      />
+    ),
+  },
+  {
+    id: 'social-feed',
+    badge: 'CardGit Events',
+    title: 'Social\nWall',
+    subtitle: 'A live community feed that captures the energy of your event in real time.',
+    bullets: [
+      'Attendees post updates, photos, and reactions throughout the event.',
+      'Social wall visible on the event app and on display screens at the venue.',
+      'Organisers moderate content before it appears publicly.',
+      'Creates a shared record of event highlights for post-event sharing.',
+    ],
+    gradient: 'from-[#0a001a] via-[#160528] to-[#0a0020]',
+    accentColor: '#c084fc',
+    visual: (
+      <SlideImage
+        src={imgSocialFeed}
+        alt="CardGit Events social wall showing a live community feed with attendee posts, photos, and reactions"
+      />
+    ),
+  },
+  {
+    id: 'speaker-lineup',
+    badge: 'CardGit Events',
+    title: 'Speaker\nManagement',
+    subtitle: 'Showcase your speakers and give attendees a way to connect with them directly.',
+    bullets: [
+      'Full speaker profiles with bio, headshot, session links, and social profiles.',
+      'Attendees browse the speaker directory and send connection requests.',
+      'Speakers manage their own profile information via a dedicated portal.',
+      'Speaker directory is SEO-friendly and publicly accessible before the event.',
+    ],
+    gradient: 'from-[#001020] via-[#001830] to-[#000f1e]',
+    accentColor: '#7dd3fc',
+    visual: (
+      <SlideImage
+        src={imgSpeakerLineup}
+        alt="CardGit Events speaker line-up showing a speaker directory with profiles, session assignments, and networking options"
       />
     ),
   },
