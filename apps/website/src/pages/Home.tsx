@@ -126,10 +126,10 @@ export default function Home() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14">
           {/* Side-by-side on ALL screen sizes — copy left, image right */}
-          <div className="flex flex-row items-center gap-6 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16">
 
             {/* Copy — takes more space on mobile */}
-            <div className="flex-1 min-w-0">
+            <div className="w-full lg:flex-1 lg:min-w-0">
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -214,11 +214,11 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="flex-shrink-0 flex items-center justify-center relative"
+              className="flex-shrink-0 flex items-center justify-center relative w-full lg:w-auto"
             >
               {/* Glow */}
               <div
-                className="absolute inset-0 rounded-full blur-3xl opacity-25 dark:opacity-15 pointer-events-none scale-110"
+                className="absolute inset-0 rounded-full blur-3xl opacity-35 dark:opacity-20 pointer-events-none scale-125"
                 style={{ background: 'radial-gradient(circle, #7c3aed 0%, #6366f1 60%, transparent 80%)' }}
                 aria-hidden="true"
               />
@@ -232,8 +232,8 @@ export default function Home() {
                   alt="CardGit digital business card profile showing QR code, social links, analytics, and booking features"
                   width="745"
                   height="727"
-                  className="w-[140px] sm:w-[200px] md:w-[260px] lg:w-[400px] h-auto rounded-2xl lg:rounded-3xl block"
-                  style={{ filter: 'drop-shadow(0 16px 32px rgba(99,102,241,0.45)) drop-shadow(0 4px 12px rgba(124,58,237,0.3))' }}
+                  className="w-[320px] sm:w-[420px] lg:w-[480px] h-auto rounded-2xl lg:rounded-3xl block mx-auto"
+                  style={{ filter: 'drop-shadow(0 32px 64px rgba(99,102,241,0.55)) drop-shadow(0 8px 24px rgba(124,58,237,0.4))' }}
                   loading="eager"
                   decoding="sync"
                 />
