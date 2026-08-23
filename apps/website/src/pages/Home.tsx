@@ -124,7 +124,7 @@ export default function Home() {
         <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-indigo-400/15 dark:bg-indigo-600/10 rounded-full blur-3xl animate-blob pointer-events-none" aria-hidden="true" />
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-violet-400/15 dark:bg-violet-600/10 rounded-full blur-3xl animate-blob animate-delay-400 pointer-events-none" aria-hidden="true" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14">
           {/* Side-by-side on ALL screen sizes — copy left, image right */}
           <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16">
 
