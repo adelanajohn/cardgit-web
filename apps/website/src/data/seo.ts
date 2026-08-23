@@ -12,9 +12,9 @@ export interface PageSEO {
 
 export const pageSEO: Record<string, PageSEO> = {
   home: {
-    title: 'CardGit — Digital Business Cards & Networking-First Events Platform',
+    title: 'CardGit — Share Who You Are. Smarter Events. Stronger Connections.',
     description:
-      'CardGit is a UK-based digital identity platform. Create free digital business cards with QR sharing, lead capture, and analytics. Run smarter events with CardGit Events.',
+      'CardGit is a UK-based digital identity platform. Share your professional profile via QR code, capture leads, book appointments, and run networking-first events with CardGit Events.',
     canonical: SITE_URL,
     ogImage: `${SITE_URL}/og/home.png`,
   },

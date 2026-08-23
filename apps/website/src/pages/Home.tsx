@@ -131,7 +131,7 @@ export default function Home() {
             {/* Copy — takes more space on mobile */}
             <div className="w-full lg:flex-1 lg:min-w-0">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[var(--text-primary)] leading-[1.08] mb-5">
-                {[['Your', 'Digital', 'Identity.', 'default'], ['Smarter', 'Events.', '', 'gradient'], ['Stronger', 'Connections.', '', 'default']].map((group, gi) => (
+                {[['Share', 'Who', 'You', 'Are.', 'default'], ['Smarter', 'Events.', '', 'gradient'], ['Stronger', 'Connections.', '', 'default']].map((group, gi) => (
                   <span key={gi} className="block">
                     {group.slice(0, -1).filter(Boolean).map((word, wi) => (
                       <motion.span
