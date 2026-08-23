@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+Sitemap: https://cardgit.com/sitemap.xml
+
+# === AI / LLM CRAWLERS — explicitly allowed ===
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Block only internal app routes from all crawlers
+User-agent: *
+Disallow: /app/
+Disallow: /api/

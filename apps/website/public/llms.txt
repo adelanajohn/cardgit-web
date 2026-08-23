@@ -1,0 +1,100 @@
+# CardGit
+
+> CardGit is a UK-based digital identity and professional networking platform founded in London. It offers two products: CardGit (digital business cards) and CardGit Events (networking-first event management platform for conferences, summits, and business networking events).
+
+## CardGit — Digital Business Cards
+
+CardGit is a digital business card platform that allows professionals, freelancers, and businesses to create a shareable digital profile accessible via QR code or link. It replaces physical paper business cards with a dynamic, updatable digital identity.
+
+### Key Features
+- Digital business card creation (free tier available)
+- QR code profile sharing — no app required to view
+- Lead capture — collect visitor contact details directly from the card
+- Appointment booking — clients book meetings from the card
+- Social media integration — LinkedIn, WhatsApp, Instagram, TikTok, Facebook, X, YouTube
+- Interactive product and service showcase with call-to-action buttons
+- Real-time analytics — views, clicks, engagement, and audience location data
+- Team/enterprise management — centralised dashboard for all employee cards
+- Multiple cards per user — business, personal, events, side projects
+- GDPR-conscious data handling
+- Eco-friendly alternative to paper business cards
+
+### Who Uses CardGit
+Professionals, freelancers, entrepreneurs, SMEs, sales teams, recruitment agencies, property consultants, financial services firms, healthcare organisations, universities, creatives, and enterprise teams across the United Kingdom and internationally.
+
+### URLs
+- Website: https://cardgit.com
+- Sign up (free): https://app.cardgit.com/auth/signup
+- Features: https://cardgit.com/features
+- Pricing: https://cardgit.com/pricing
+- Enterprise: https://cardgit.com/enterprise
+- FAQ: https://cardgit.com/faq
+
+---
+
+## CardGit Events — Networking-First Event Management Platform
+
+CardGit Events is an event management platform designed for conference organisers, summit teams, expo managers, and business networking event organisers. It is built on top of CardGit's digital identity infrastructure, enabling richer attendee networking than standard event platforms.
+
+### Supported Event Types
+- In-person events
+- Virtual events
+- Hybrid events (in-person + virtual combined)
+
+### Key Organiser Features
+- Event creation and full lifecycle management (draft → published → live → completed)
+- Attendee registration with ticketing — free, paid, early-bird, VIP, and group ticket types
+- Stripe-powered payment processing with multi-currency support and promo codes
+- Custom registration fields
+- Role-based team management with 7 roles: owner, admin, moderator, speaker manager, sponsor manager, analyst, check-in staff
+- Drag-and-drop schedule builder with tracks and reusable session templates
+- Speaker management and public speaker directory
+- Sponsor and exhibitor management with lead capture tools
+- Q&A moderation — review and approve audience questions before they appear
+- Social wall moderation
+- Venue and room management
+- Attendee check-in portal with QR code scanning
+- Event analytics, deep-dive analytics, revenue reporting, and activity feeds
+- Live poll and survey builders
+- Email management, automated notifications, and announcements
+- Data export and attendee certificates
+- Per-event feature flags — individually enable or disable networking, polls, Q&A, gamification, social wall, and sponsors
+
+### Key Attendee Features
+- Smart matchmaking — AI-powered attendee matching based on CardGit profile, interests, and professional goals
+- Speed networking sessions
+- Live Q&A — submit questions to speakers during sessions
+- Live polls — vote in real time during sessions
+- Social wall — live community feed throughout the event
+- Session schedule with personal schedule builder
+- Speaker directory
+- Sponsor booths with lead capture
+- Gamification — points, leaderboards, challenges, achievements, and badges
+- Group chat and direct messaging between attendees
+- Meeting scheduler — book 1-to-1 meetings with other attendees
+- Photo gallery and event highlights
+- Post-event surveys and completion certificates
+- Networking hub — discover and connect with all attendees
+- Privacy controls — incognito mode, Do Not Disturb, networking opt-in/out
+
+### Who Uses CardGit Events
+Conference organisers, summit teams, corporate event teams, business networking communities, industry associations, event agencies, and UK-based organisations running professional events.
+
+### URLs
+- Platform: https://events.cardgit.com
+- Sign up: https://events.cardgit.com/register
+- Discover events: https://events.cardgit.com/events
+- FAQ: https://cardgit.com/faq
+
+---
+
+## Company Information
+- Name: CardGit
+- Headquarters: London, United Kingdom
+- Contact: info@cardgit.com
+- LinkedIn: https://www.linkedin.com/company/cardgit
+- Facebook: https://www.facebook.com/share/1BPnySukTD/
+- Instagram: https://instagram.com/cardgit
+- YouTube: https://youtube.com/@cardgit
+- GDPR: Conscious and compliant
+- Market: United Kingdom (primary), International
