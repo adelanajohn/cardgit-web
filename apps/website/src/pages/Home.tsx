@@ -119,10 +119,10 @@ export default function Home() {
       />
 
       {/* ══ HERO ════════════════════════════════════════════ */}
-      <section className="relative bg-[var(--bg-page)] overflow-x-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/80 via-white to-violet-50/60 dark:from-indigo-950/50 dark:via-slate-950 dark:to-violet-950/30" aria-hidden="true" />
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-indigo-400/15 dark:bg-indigo-600/10 rounded-full blur-3xl animate-blob" aria-hidden="true" />
-        <div className="absolute top-1/2 -right-32 w-[500px] h-[500px] bg-violet-400/15 dark:bg-violet-600/10 rounded-full blur-3xl animate-blob animate-delay-400" aria-hidden="true" />
+      <section className="relative bg-[var(--bg-page)]">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/80 via-white to-violet-50/60 dark:from-indigo-950/50 dark:via-slate-950 dark:to-violet-950/30 pointer-events-none" aria-hidden="true" />
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-indigo-400/15 dark:bg-indigo-600/10 rounded-full blur-3xl animate-blob pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-violet-400/15 dark:bg-violet-600/10 rounded-full blur-3xl animate-blob animate-delay-400 pointer-events-none" aria-hidden="true" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14">
           <div className="grid lg:grid-cols-2 gap-8 xl:gap-16 items-center">
@@ -224,12 +224,11 @@ export default function Home() {
                   aria-hidden="true"
                 />
 
-                {/* Main card — tilted 4° + floating animation */}
+                {/* Main card — floating animation, tilt only on desktop */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ transform: 'rotate(4deg)' }}
-                  className="relative z-10"
+                  className="relative z-10 lg:[transform:rotate(4deg)]"
                 >
                   <img
                     src={cardgitHeroImg}
