@@ -85,8 +85,8 @@ const STEPS = [
 ]
 
 const STATS = [
-  { value: '847+', label: 'Avg. monthly views' },
-  { value: '32%', label: 'Lead conversion rate' },
+  { value: 'Free', label: 'Forever plan' },
+  { value: 'QR', label: 'One scan to share' },
   { value: '0', label: 'Printing cost' },
   { value: '100%', label: 'Instant updates' },
 ]
