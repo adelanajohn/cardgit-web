@@ -83,10 +83,16 @@ export default function BlogPost() {
             </AnimatedSection>
           </header>
 
-          {/* Hero image placeholder */}
+          {/* Hero image */}
           <AnimatedSection delay={0.1} className="mb-10">
-            <div className="aspect-video bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 rounded-2xl flex items-center justify-center">
-              <span className="text-indigo-400">CardGit Blog</span>
+            <div className="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
             </div>
           </AnimatedSection>
 

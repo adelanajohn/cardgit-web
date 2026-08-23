@@ -57,7 +57,7 @@ Effective conference networking combines preparation, targeted conversations, an
     author: 'CardGit',
     datePublished: '2026-08-15',
     dateModified: '2026-08-15',
-    image: '/blog/conference-networking-uk-2026.jpg',
+    image: '/blog/networking-conferences.svg',
     readTime: 5,
   },
   {
@@ -100,7 +100,7 @@ For professionals who regularly exchange contact details, a digital business car
     author: 'CardGit',
     datePublished: '2026-08-01',
     dateModified: '2026-08-01',
-    image: '/blog/digital-vs-paper-business-card.jpg',
+    image: '/blog/digital-vs-paper.svg',
     readTime: 4,
   },
   {
@@ -140,7 +140,7 @@ The best event management platform for a UK conference is one that treats networ
     author: 'CardGit',
     datePublished: '2026-07-20',
     dateModified: '2026-07-20',
-    image: '/blog/best-event-management-platform-uk-2026.jpg',
+    image: '/blog/event-management-platform.svg',
     readTime: 6,
   },
   {
@@ -182,7 +182,7 @@ Events using smart matchmaking typically report higher attendee satisfaction wit
     author: 'CardGit',
     datePublished: '2026-07-05',
     dateModified: '2026-07-05',
-    image: '/blog/smart-matchmaking-cardgit-events.jpg',
+    image: '/blog/smart-matchmaking.svg',
     readTime: 4,
   },
   {
@@ -230,7 +230,7 @@ Centralised digital business card management through CardGit's team dashboard en
     author: 'CardGit',
     datePublished: '2026-06-18',
     dateModified: '2026-06-18',
-    image: '/blog/team-digital-business-cards.jpg',
+    image: '/blog/team-business-cards.svg',
     readTime: 5,
   },
   {
@@ -269,7 +269,7 @@ UK business networking events are most productive when approached with clear goa
     author: 'CardGit',
     datePublished: '2026-08-10',
     dateModified: '2026-08-10',
-    image: '/blog/uk-business-networking-events-2026.jpg',
+    image: '/blog/uk-business-networking.svg',
     readTime: 5,
   },
   {
@@ -310,7 +310,7 @@ The September 2026 update will introduce appointment booking calendar integratio
     author: 'CardGit',
     datePublished: '2026-08-23',
     dateModified: '2026-08-23',
-    image: '/blog/cardgit-platform-update-august-2026.jpg',
+    image: '/blog/platform-update.svg',
     readTime: 4,
   },
 ]

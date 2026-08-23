@@ -10,8 +10,14 @@ interface Props {
 export default function BlogCard({ post }: Props) {
   return (
     <article className="group bg-[var(--bg-surface)] border border-slate-200 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-      <div className="aspect-video bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center">
-        <span className="text-indigo-400 text-sm">CardGit Blog</span>
+      <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+        <img
+          src={post.image}
+          alt={post.title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="p-6">
         <Badge className="mb-3">{post.category}</Badge>
