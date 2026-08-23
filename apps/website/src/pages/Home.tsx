@@ -22,6 +22,7 @@ import FAQAccordion from '@/components/ui/FAQAccordion'
 import CTABanner from '@/components/ui/CTABanner'
 import ProductDiagram from '@/components/ui/ProductDiagram'
 import FeatureCarousel from '@/components/ui/FeatureCarousel'
+import cardgitHeroImg from '@/assets/cards/card-image.png'
 import { CardIllustration, EventsIllustration } from '@/components/ui/IllustrationCard'
 import { faqCategories } from '@/data/faq'
 import { pageSEO } from '@/data/seo'
@@ -207,23 +208,75 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Hero image */}
+            {/* Hero image — card-image.png with tilt, glow, floating chips */}
             <motion.div
               initial={{ opacity: 0, x: 30, scale: 0.97 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.65, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
-              className="relative hidden lg:block"
+              className="relative hidden lg:flex items-center justify-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-3xl blur-2xl scale-95" aria-hidden="true" />
-              <img
-                src="/hero.svg"
-                alt="CardGit digital business card and CardGit Events platform side by side"
-                width="900"
-                height="520"
-                className="relative w-full h-auto rounded-2xl shadow-2xl shadow-indigo-500/15 border border-white/60 dark:border-slate-700/60"
-                loading="eager"
-                decoding="sync"
+              {/* Ambient glow */}
+              <div
+                className="absolute w-[400px] h-[400px] rounded-full blur-[72px] opacity-25 dark:opacity-20 pointer-events-none"
+                style={{ background: 'radial-gradient(circle, #7c3aed 0%, #6366f1 50%, transparent 75%)' }}
+                aria-hidden="true"
               />
+              {/* Decorative rings */}
+              <div className="absolute w-[460px] h-[460px] rounded-full border border-indigo-300/20 dark:border-indigo-700/20 pointer-events-none" aria-hidden="true" />
+              <div className="absolute w-[530px] h-[530px] rounded-full border border-violet-200/10 dark:border-violet-700/10 pointer-events-none" aria-hidden="true" />
+
+              {/* Main card — tilted 4° + floating animation */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                style={{ transform: 'rotate(4deg)' }}
+                className="relative"
+              >
+                <img
+                  src={cardgitHeroImg}
+                  alt="CardGit digital business card profile showing QR code, social links, analytics, and booking features"
+                  width="745"
+                  height="727"
+                  className="w-[340px] sm:w-[380px] lg:w-[400px] h-auto rounded-3xl"
+                  style={{
+                    filter: 'drop-shadow(0 32px 64px rgba(99,102,241,0.4)) drop-shadow(0 8px 20px rgba(124,58,237,0.3))',
+                  }}
+                  loading="eager"
+                  decoding="sync"
+                />
+              </motion.div>
+
+              {/* Floating stat chip — top left */}
+              <motion.div
+                initial={{ opacity: 0, x: -16, y: 8 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.5 }}
+                className="absolute -left-6 top-[22%] bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-xl shadow-indigo-500/15 border border-indigo-100/60 dark:border-slate-700/60"
+              >
+                <p className="text-lg font-black text-indigo-600 dark:text-indigo-400 leading-none">847</p>
+                <p className="text-[10px] text-slate-500 mt-0.5 font-medium">Profile views</p>
+              </motion.div>
+
+              {/* Floating stat chip — right */}
+              <motion.div
+                initial={{ opacity: 0, x: 16, y: 8 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 1.05, duration: 0.5 }}
+                className="absolute -right-4 top-[45%] bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-xl shadow-purple-500/15 border border-purple-100/60 dark:border-slate-700/60"
+              >
+                <p className="text-lg font-black text-purple-600 dark:text-purple-400 leading-none">32</p>
+                <p className="text-[10px] text-slate-500 mt-0.5 font-medium">New leads</p>
+              </motion.div>
+
+              {/* Floating booking chip — bottom */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+                className="absolute bottom-[8%] left-[15%] bg-emerald-500 rounded-xl px-3 py-2 shadow-lg shadow-emerald-500/30"
+              >
+                <p className="text-white text-xs font-bold">✓ Booked · Today 2pm</p>
+              </motion.div>
             </motion.div>
           </div>
 
