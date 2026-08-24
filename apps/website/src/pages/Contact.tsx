@@ -1,4 +1,5 @@
-import { Mail, MessageSquare, Users, Zap, Facebook, Linkedin, Instagram, Youtube } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, MessageSquare, Users, Zap, Facebook, Linkedin, Instagram, Youtube, CheckCircle, AlertCircle, Loader } from 'lucide-react'
 import SEO from '@/components/SEO'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { pageSEO, SITE_URL } from '@/data/seo'
@@ -44,6 +45,41 @@ const CONTACT_REASONS = [
 
 export default function Contact() {
   const seo = pageSEO['contact']
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus('sending')
+    setErrorMsg('')
+
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      subject: (form.elements.namedItem('subject') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      const json = await res.json() as { success?: boolean; error?: string }
+      if (res.ok && json.success) {
+        setStatus('success')
+        form.reset()
+      } else {
+        setStatus('error')
+        setErrorMsg(json.error ?? 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setStatus('error')
+      setErrorMsg('Network error. Please check your connection and try again.')
+    }
+  }
 
   return (
     <>
@@ -92,10 +128,7 @@ export default function Contact() {
             {/* Form — takes 3 cols */}
             <AnimatedSection delay={0.1} className="lg:col-span-3">
               <form
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  window.location.href = 'mailto:info@cardgit.com'
-                }}
+                onSubmit={handleSubmit}
                 className="bg-[var(--bg-surface)] border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 space-y-5"
                 aria-label="Contact form"
               >
@@ -103,6 +136,25 @@ export default function Contact() {
                   <h2 className="text-2xl font-black text-[var(--text-primary)] mb-1">Send a message</h2>
                   <p className="text-sm text-[var(--text-secondary)]">Fill in the form and we'll be in touch shortly.</p>
                 </div>
+
+                {/* Success state */}
+                {status === 'success' && (
+                  <div className="flex items-start gap-3 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-700/50 rounded-xl p-4">
+                    <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <div>
+                      <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">Message sent</p>
+                      <p className="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">We'll get back to you within one business day.</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error state */}
+                {status === 'error' && (
+                  <div className="flex items-start gap-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700/50 rounded-xl p-4">
+                    <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <p className="text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
+                  </div>
+                )}
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
@@ -169,9 +221,15 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all shadow-sm shadow-indigo-500/30 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  disabled={status === 'sending'}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all shadow-sm shadow-indigo-500/30 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {status === 'sending' ? (
+                    <>
+                      <Loader className="w-4 h-4 animate-spin" aria-hidden="true" />
+                      Sending…
+                    </>
+                  ) : 'Send Message'}
                 </button>
               </form>
             </AnimatedSection>

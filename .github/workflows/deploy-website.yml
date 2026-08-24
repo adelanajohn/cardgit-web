@@ -26,6 +26,11 @@ jobs:
         run: npm run build
         working-directory: apps/website
 
+      # Copy the Pages Functions into the dist folder so Cloudflare
+      # picks them up alongside the static assets.
+      - name: Copy Pages Functions into dist
+        run: cp -r apps/website/functions apps/website/dist/functions
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
