@@ -19,6 +19,15 @@ import CTABanner from '@/components/ui/CTABanner'
 import { faqCategories } from '@/data/faq'
 import { pageSEO, SITE_URL } from '@/data/seo'
 
+import imgLeadCapture from '@/assets/cards/Smart Lead Capture Landing Page.png'
+import imgAppointment from '@/assets/cards/Appointment Booking Landing page (2).png'
+import imgSocialMedia from '@/assets/cards/Social Media Integration Landing page.png'
+import imgQRCode from '@/assets/cards/Digital Business Card QR Code Landing page.png'
+import imgShowcase from '@/assets/cards/Interactive Product & Service Showcase Landing Page.png'
+import imgTeamMgmt from '@/assets/cards/Team Card Management Landing page.png'
+import imgMultiCard from '@/assets/cards/Multiple Digital Business Cards Landing page.png'
+import imgAnalytics from '@/assets/cards/Business Card Analytics Landing Page.png'
+
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -54,6 +63,8 @@ const FEATURES = [
   {
     icon: Target,
     title: 'Smart Lead Capture',
+    image: imgLeadCapture,
+    imageAlt: 'CardGit smart lead capture form embedded in a digital business card profile',
     description:
       'Lead capture in CardGit allows card viewers to submit their contact information directly from a digital business card profile. Captured leads are stored in your dashboard and can be exported at any time.',
     detail: 'No forms to build. No third-party tools. Lead capture is built directly into every CardGit card.',
@@ -61,6 +72,8 @@ const FEATURES = [
   {
     icon: Calendar,
     title: 'Appointment Booking',
+    image: imgAppointment,
+    imageAlt: 'CardGit appointment booking feature showing a meeting scheduler integrated into a digital business card',
     description:
       'CardGit appointment booking allows clients and prospects to schedule meetings directly from your digital business card — without email back-and-forth or a separate booking tool.',
     detail: 'Clients see your availability and book time slots that work for both parties.',
@@ -68,6 +81,8 @@ const FEATURES = [
   {
     icon: Share2,
     title: 'Social Media Integration',
+    image: imgSocialMedia,
+    imageAlt: 'CardGit social media integration showing LinkedIn, Instagram, TikTok and other social links on a digital card',
     description:
       'CardGit integrates with LinkedIn, WhatsApp, Instagram, TikTok, Facebook, X (Twitter), and YouTube — displaying all your social profiles in a single, scannable digital card.',
     detail: 'Add or remove social links instantly. Changes appear immediately on your card.',
@@ -75,6 +90,8 @@ const FEATURES = [
   {
     icon: QrCode,
     title: 'Instant QR Code Sharing',
+    image: imgQRCode,
+    imageAlt: 'CardGit QR code sharing feature showing a scannable code linked to a professional profile',
     description:
       'Every CardGit digital business card generates a unique QR code and shareable link. Anyone can view your profile by scanning the code — no app installation required.',
     detail: 'Share in person, via email, on slides, or in your email signature.',
@@ -82,6 +99,8 @@ const FEATURES = [
   {
     icon: ShoppingBag,
     title: 'Interactive Product Showcase',
+    image: imgShowcase,
+    imageAlt: 'CardGit interactive product and service showcase showing product cards with CTA buttons',
     description:
       'CardGit product and service showcases allow professionals to display their offerings with images, descriptions, and call-to-action buttons including Buy, Enquire, and Book Now.',
     detail: 'Update your showcase in real time. No reprinting required.',
@@ -89,6 +108,8 @@ const FEATURES = [
   {
     icon: Users,
     title: 'Team Management Dashboard',
+    image: imgTeamMgmt,
+    imageAlt: 'CardGit team management dashboard showing centralised control of all employee digital business cards',
     description:
       'CardGit team management gives administrators centralised control over every employee digital business card — enforcing brand consistency, managing permissions, and handling onboarding and offboarding.',
     detail: 'One dashboard. All team cards. Complete brand control.',
@@ -96,6 +117,8 @@ const FEATURES = [
   {
     icon: Layers,
     title: 'Multiple Cards per User',
+    image: imgMultiCard,
+    imageAlt: 'CardGit multiple digital business cards feature showing several cards for different contexts in one account',
     description:
       'CardGit allows users to create separate digital business cards for different contexts — a primary business card, a personal brand card, an event-specific card, or a side project card — each with its own QR code and link.',
     detail: 'Switch between cards based on context. Share the right identity at the right time.',
@@ -103,6 +126,8 @@ const FEATURES = [
   {
     icon: BarChart2,
     title: 'Analytics Dashboard',
+    image: imgAnalytics,
+    imageAlt: 'CardGit analytics dashboard showing profile views, link clicks, lead captures and engagement trends',
     description:
       'CardGit analytics tracks profile views, link clicks, engagement rates, and audience location data in real time — giving professionals measurable insight into how their digital card is performing.',
     detail: 'Understand which content drives enquiries and adjust your card accordingly.',
@@ -224,8 +249,14 @@ export default function DigitalBusinessCards() {
                     <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4">{feature.description}</p>
                     <p className="text-indigo-600 dark:text-indigo-400 font-medium">{feature.detail}</p>
                   </div>
-                  <div className="bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 rounded-3xl aspect-video flex items-center justify-center">
-                    <feature.icon className="w-16 h-16 text-indigo-300 dark:text-indigo-600" aria-hidden="true" />
+                  <div className="overflow-hidden rounded-3xl shadow-xl ring-1 ring-slate-200 dark:ring-slate-700/50">
+                    <img
+                      src={feature.image}
+                      alt={feature.imageAlt}
+                      className="w-full h-auto block"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 </div>
               </AnimatedSection>
