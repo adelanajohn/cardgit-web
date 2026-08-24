@@ -5,10 +5,15 @@ on:
     branches: [main]
     paths:
       - 'apps/website/**'
+      - '.github/workflows/deploy-website.yml'
+  workflow_dispatch: # allow manual trigger from GitHub Actions UI
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - uses: actions/checkout@v4
 
@@ -26,16 +31,14 @@ jobs:
         run: npm run build
         working-directory: apps/website
 
-      # Copy the Pages Functions into the dist folder so Cloudflare
-      # picks them up alongside the static assets.
+      # Cloudflare Pages Functions must live in a top-level `functions/`
+      # directory relative to the deploy directory. Copy them in.
       - name: Copy Pages Functions into dist
         run: cp -r apps/website/functions apps/website/dist/functions
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: cardgit-website
-          directory: apps/website/dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy apps/website/dist --project-name=cardgit-website --commit-dirty=true
