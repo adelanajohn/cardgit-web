@@ -35,7 +35,7 @@ jobs:
         run: cp -r apps/website/functions apps/website/dist/functions
 
       - name: Install Wrangler
-        run: npm install -g wrangler@latest
+        run: npm install -g wrangler@3
 
       - name: Deploy to Cloudflare Pages
         run: wrangler pages deploy dist --project-name=cardgit-website --branch=main
