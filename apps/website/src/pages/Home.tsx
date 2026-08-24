@@ -286,7 +286,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-black text-[var(--text-primary)] text-lg leading-tight">Digital Business Cards</h3>
-                    <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">cardgit.com</p>
+                    <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium"></p>
                   </div>
                 </div>
 
@@ -322,7 +322,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-black text-[var(--text-primary)] text-lg leading-tight">CardGit Events</h3>
-                    <p className="text-xs text-purple-600 dark:text-purple-400 font-medium">events.cardgit.com</p>
+                    <p className="text-xs text-purple-600 dark:text-purple-400 font-medium"></p>
                   </div>
                 </div>
 

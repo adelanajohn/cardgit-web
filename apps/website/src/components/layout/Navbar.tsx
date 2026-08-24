@@ -114,8 +114,8 @@ export default function Navbar() {
             { label: 'Features', to: '/features' },
             { label: 'Pricing', to: '/pricing' },
             { label: 'Use Cases', to: '/use-cases' },
-            { label: 'Blog', to: '/blog' },
             { label: 'Contact', to: '/contact' },
+            { label: 'Blog', to: '/blog' },
           ].map((link) => (
             <Link
               key={link.to}
@@ -199,9 +199,9 @@ export default function Navbar() {
             { label: 'Features', to: '/features' },
             { label: 'Pricing', to: '/pricing' },
             { label: 'Use Cases', to: '/use-cases' },
+            { label: 'Contact', to: '/contact' },
             { label: 'Blog', to: '/blog' },
             { label: 'About', to: '/about' },
-            { label: 'Contact', to: '/contact' },
           ].map((link) => (
             <Link
               key={link.to}

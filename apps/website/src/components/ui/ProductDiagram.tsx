@@ -89,7 +89,6 @@ export default function ProductDiagram() {
               </div>
               <div>
                 <p className="font-black text-sm text-[var(--text-primary)]">Digital Business Cards</p>
-                <p className="text-xs font-semibold text-indigo-500 dark:text-indigo-400">cardgit.com</p>
               </div>
             </div>
             <ul className="space-y-2">
@@ -114,7 +113,6 @@ export default function ProductDiagram() {
               </div>
               <div>
                 <p className="font-black text-sm text-[var(--text-primary)]">CardGit Events</p>
-                <p className="text-xs font-semibold text-purple-500 dark:text-purple-400">events.cardgit.com</p>
               </div>
             </div>
             <ul className="space-y-2">
