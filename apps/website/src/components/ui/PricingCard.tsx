@@ -10,6 +10,7 @@ interface PricingTier {
   ctaHref: string
   highlighted?: boolean
   badge?: string
+  comingSoon?: boolean
 }
 
 interface Props {
@@ -29,6 +30,14 @@ export default function PricingCard({ tier }: Props) {
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
           <span className="bg-amber-400 text-amber-900 font-bold text-xs px-4 py-1.5 rounded-full shadow-md">
             {tier.badge}
+          </span>
+        </div>
+      )}
+
+      {tier.comingSoon && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+          <span className="bg-slate-700 dark:bg-slate-600 text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-md whitespace-nowrap">
+            🚧 Coming Soon
           </span>
         </div>
       )}

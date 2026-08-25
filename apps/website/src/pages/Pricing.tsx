@@ -60,6 +60,7 @@ const CARD_TIERS: Record<'monthly' | 'annual', PricingTier[]> = {
       ],
       cta: 'Contact Sales',
       ctaHref: 'mailto:info@cardgit.com?subject=CardGit Teams Enquiry',
+      comingSoon: true,
     },
   ],
   annual: [
@@ -113,6 +114,7 @@ const CARD_TIERS: Record<'monthly' | 'annual', PricingTier[]> = {
       ],
       cta: 'Contact Sales',
       ctaHref: 'mailto:info@cardgit.com?subject=CardGit Teams Enquiry',
+      comingSoon: true,
     },
   ],
 }
@@ -293,25 +295,16 @@ const PRICING_FAQS = [
 
 export default function Pricing() {
   const [searchParams] = useSearchParams()
-  // ?tab=cards (default) or ?tab=events
   // ?billing=monthly (default) or ?billing=annual
-  const rawTab = searchParams.get('tab')
   const rawBilling = searchParams.get('billing')
-  const product: 'cards' | 'events' = rawTab === 'events' ? 'events' : 'cards'
   const billing: 'monthly' | 'annual' = rawBilling === 'annual' ? 'annual' : 'monthly'
 
   const seo = pageSEO['pricing']
 
-  const tiers = product === 'cards' ? CARD_TIERS[billing] : EVENTS_TIERS[billing]
-  const comparison = product === 'cards' ? CARD_COMPARISON : EVENTS_COMPARISON
-  const compHeaders =
-    product === 'cards'
-      ? ['Free', 'Pro', 'Teams']
-      : ['Starter', 'Professional', 'Enterprise']
-  const compKeys =
-    product === 'cards'
-      ? (['free', 'pro', 'teams'] as const)
-      : (['free', 'pro', 'enterprise'] as const)
+  const tiers = CARD_TIERS[billing]
+  const comparison = CARD_COMPARISON
+  const compHeaders = ['Free', 'Pro', 'Teams']
+  const compKeys = ['free', 'pro', 'teams'] as const
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -345,41 +338,16 @@ export default function Pricing() {
               Start free. Upgrade when you need more. No hidden fees.
             </p>
 
-            {/* Product switcher */}
-            <div className="inline-flex bg-slate-100 dark:bg-slate-800 rounded-xl p-1 gap-1 mb-6" role="tablist" aria-label="Select product">
-              {/* URL-driven product tabs */}
-              <Link
-                to={`/pricing?tab=cards${billing === 'annual' ? '&billing=annual' : ''}`}
-                role="tab"
-                aria-selected={product === 'cards'}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none ${
-                  product === 'cards' ? 'bg-white dark:bg-slate-700 text-[var(--text-primary)] shadow-sm' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                }`}
-              >
-                Digital Cards
-              </Link>
-              <Link
-                to={`/pricing?tab=events${billing === 'annual' ? '&billing=annual' : ''}`}
-                role="tab"
-                aria-selected={product === 'events'}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none ${
-                  product === 'events' ? 'bg-white dark:bg-slate-700 text-[var(--text-primary)] shadow-sm' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                }`}
-              >
-                Events Platform
-              </Link>
-            </div>
-
             {/* URL-driven billing toggle */}
             <div className="flex items-center justify-center gap-3">
               <Link
-                to={`/pricing?tab=${product}&billing=monthly`}
+                to="/pricing?billing=monthly"
                 className={`text-sm font-medium transition-colors ${billing === 'monthly' ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}
               >
                 Monthly
               </Link>
               <Link
-                to={`/pricing?tab=${product}&billing=${billing === 'monthly' ? 'annual' : 'monthly'}`}
+                to={`/pricing?billing=${billing === 'monthly' ? 'annual' : 'monthly'}`}
                 aria-label={`Switch to ${billing === 'monthly' ? 'annual' : 'monthly'} billing`}
                 className={`relative w-12 h-6 rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none ${
                   billing === 'annual' ? 'bg-indigo-600' : 'bg-slate-300 dark:bg-slate-600'
@@ -392,7 +360,7 @@ export default function Pricing() {
                 />
               </Link>
               <Link
-                to={`/pricing?tab=${product}&billing=annual`}
+                to="/pricing?billing=annual"
                 className={`text-sm font-medium transition-colors ${billing === 'annual' ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}
               >
                 Annual{' '}

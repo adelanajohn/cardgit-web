@@ -73,9 +73,9 @@ const INDUSTRIES = [
 ]
 
 const TESTIMONIALS = [
-  { name: 'Jessica Miller', role: 'Marketing Consultant', quote: 'Clients now contact me directly from my digital card — the lead capture feature has been a game-changer.', stars: 5 },
-  { name: 'Daniel Kim', role: 'Software Engineer', quote: 'I share my QR code at meetups and people book calls on the spot. Appointment booking changed how I network.', stars: 5 },
-  { name: 'Richard Thomson', role: 'Security Analyst', quote: 'Consistent branding across all employee cards. The team dashboard makes onboarding effortless.', stars: 5 },
+  { name: 'Jessica Miller', role: 'Marketing Consultant', quote: 'Clients now contact me directly from my digital card — the lead capture feature has been a game-changer.', stars: 5, photo: 'https://randomuser.me/api/portraits/women/44.jpg' },
+  { name: 'Daniel Kim', role: 'Software Engineer', quote: 'I share my QR code at meetups and people book calls on the spot. Appointment booking changed how I network.', stars: 5, photo: 'https://randomuser.me/api/portraits/men/32.jpg' },
+  { name: 'Richard Thomson', role: 'Security Analyst', quote: 'Consistent branding across all employee cards. The team dashboard makes onboarding effortless.', stars: 5, photo: 'https://randomuser.me/api/portraits/men/75.jpg' },
 ]
 
 const STEPS = [
@@ -187,10 +187,21 @@ export default function Home() {
                 className="mt-8 flex items-center gap-4"
               >
                 <div className="flex -space-x-2">
-                  {['bg-indigo-500','bg-violet-500','bg-pink-500','bg-blue-500','bg-emerald-500'].map((c, i) => (
-                    <div key={i} className={`w-7 h-7 rounded-full ${c} border-2 border-white dark:border-slate-900 flex items-center justify-center`}>
-                      <Users className="w-3 h-3 text-white" aria-hidden="true" />
-                    </div>
+                  {[
+                    'https://randomuser.me/api/portraits/women/44.jpg',
+                    'https://randomuser.me/api/portraits/men/32.jpg',
+                    'https://randomuser.me/api/portraits/women/68.jpg',
+                    'https://randomuser.me/api/portraits/men/75.jpg',
+                    'https://randomuser.me/api/portraits/women/90.jpg',
+                  ].map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt="CardGit user"
+                      className="w-7 h-7 rounded-full border-2 border-white dark:border-slate-900 object-cover"
+                      loading="eager"
+                      decoding="async"
+                    />
                   ))}
                 </div>
                 <p className="text-xs text-[var(--text-secondary)]">
@@ -421,9 +432,13 @@ export default function Home() {
                   <Quote className="w-5 h-5 text-indigo-200 dark:text-indigo-800 mb-2 flex-shrink-0" aria-hidden="true" />
                   <p className="text-[var(--text-secondary)] text-sm leading-relaxed flex-1 mb-4">{t.quote}</p>
                   <footer className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-xs font-bold">{t.name.charAt(0)}</span>
-                    </div>
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div>
                       <div className="font-semibold text-[var(--text-primary)] text-sm">{t.name}</div>
                       <div className="text-xs text-[var(--text-secondary)]">{t.role}</div>

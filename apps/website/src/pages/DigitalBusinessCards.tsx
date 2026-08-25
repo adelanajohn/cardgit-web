@@ -249,15 +249,13 @@ export default function DigitalBusinessCards() {
                     <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4">{feature.description}</p>
                     <p className="text-indigo-600 dark:text-indigo-400 font-medium">{feature.detail}</p>
                   </div>
-                  <div className="overflow-hidden rounded-3xl shadow-xl ring-1 ring-slate-200 dark:ring-slate-700/50 bg-slate-50 dark:bg-slate-900 flex items-center justify-center max-h-96">
-                    <img
-                      src={feature.image}
-                      alt={feature.imageAlt}
-                      className="w-full h-auto max-h-96 object-contain"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
+                  <img
+                    src={feature.image}
+                    alt={feature.imageAlt}
+                    className="w-full h-auto max-h-96 object-contain rounded-3xl"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </AnimatedSection>
             ))}
