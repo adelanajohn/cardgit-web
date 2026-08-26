@@ -4,6 +4,15 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      // Proxy contact API in dev to avoid CORS — production goes direct from the browser
+      '/api/v1/contact': {
+        target: 'https://uat.api2.cardgit.com',
+        changeOrigin: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, 'src'),

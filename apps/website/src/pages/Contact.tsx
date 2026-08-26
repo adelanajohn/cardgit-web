@@ -3,6 +3,7 @@ import { Mail, MessageSquare, Users, Zap, Facebook, Linkedin, Instagram, Youtube
 import SEO from '@/components/SEO'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import { pageSEO, SITE_URL } from '@/data/seo'
+import { useContactForm } from '@/hooks/useContactForm'
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -45,14 +46,11 @@ const CONTACT_REASONS = [
 
 export default function Contact() {
   const seo = pageSEO['contact']
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
+  const { submit, loading, error } = useContactForm()
+  const [status, setStatus] = useState<'idle' | 'success'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('sending')
-    setErrorMsg('')
-
     const form = e.currentTarget
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
@@ -61,23 +59,10 @@ export default function Contact() {
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     }
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-      const json = await res.json() as { success?: boolean; error?: string }
-      if (res.ok && json.success) {
-        setStatus('success')
-        form.reset()
-      } else {
-        setStatus('error')
-        setErrorMsg(json.error ?? 'Something went wrong. Please try again.')
-      }
-    } catch {
-      setStatus('error')
-      setErrorMsg('Network error. Please check your connection and try again.')
+    const ok = await submit(data)
+    if (ok) {
+      setStatus('success')
+      form.reset()
     }
   }
 
@@ -96,7 +81,7 @@ export default function Contact() {
           <AnimatedSection className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
               <Mail className="w-4 h-4" aria-hidden="true" />
-              We typically reply within one business day
+              We typically reply within 1–2 business days
             </div>
             <h1 className="text-5xl md:text-6xl font-black text-[var(--text-primary)] mb-5 leading-tight">
               Let's talk
@@ -143,16 +128,16 @@ export default function Contact() {
                     <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <div>
                       <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">Message sent</p>
-                      <p className="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">We'll get back to you within one business day.</p>
+                      <p className="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">We'll get back to you within 1–2 business days.</p>
                     </div>
                   </div>
                 )}
 
                 {/* Error state */}
-                {status === 'error' && (
+                {error && (
                   <div className="flex items-start gap-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700/50 rounded-xl p-4">
                     <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                    <p className="text-sm text-red-700 dark:text-red-400">{errorMsg}</p>
+                    <p className="text-sm text-red-700 dark:text-red-400">{error}</p>
                   </div>
                 )}
 
@@ -221,10 +206,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={status === 'sending'}
+                  disabled={loading}
                   className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-indigo-700 hover:to-violet-700 transition-all shadow-sm shadow-indigo-500/30 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {status === 'sending' ? (
+                  {loading ? (
                     <>
                       <Loader className="w-4 h-4 animate-spin" aria-hidden="true" />
                       Sending…
