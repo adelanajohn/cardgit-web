@@ -27,7 +27,7 @@ const CARD_TIERS: Record<'monthly' | 'annual', PricingTier[]> = {
     },
     {
       name: 'Pro',
-      price: '£9',
+      price: '£5',
       period: 'month',
       description: 'For professionals who want to capture leads and grow their network.',
       features: [
@@ -46,7 +46,7 @@ const CARD_TIERS: Record<'monthly' | 'annual', PricingTier[]> = {
     },
     {
       name: 'Teams',
-      price: '£29',
+      price: '£.',
       period: 'month',
       description: "For businesses managing a team's digital presence.",
       features: [
@@ -81,7 +81,7 @@ const CARD_TIERS: Record<'monthly' | 'annual', PricingTier[]> = {
     },
     {
       name: 'Pro',
-      price: '£86',
+      price: '£48',
       period: 'year',
       description: 'For professionals who want to capture leads and grow their network.',
       features: [
@@ -100,7 +100,7 @@ const CARD_TIERS: Record<'monthly' | 'annual', PricingTier[]> = {
     },
     {
       name: 'Teams',
-      price: '£278',
+      price: '£.',
       period: 'year',
       description: "For businesses managing a team's digital presence.",
       features: [
