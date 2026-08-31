@@ -1504,7 +1504,7 @@ jobs:
 | Link | Destination |
 |------|-------------|
 | "Create Free Card" CTA | `https://app.cardgit.com/auth/signup` |
-| "Login" | `https://app.cardgit.com/auth/login` |
+| "Login" | `https://app.cardgit.com` |
 | "Book a Demo" | email `info@cardgit.com` or Calendly/booking link |
 | "Discover Events" | `https://events.cardgit.com/events` |
 | "Start Your Event" | `https://events.cardgit.com/register` |
