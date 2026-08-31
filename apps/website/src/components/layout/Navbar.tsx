@@ -141,7 +141,7 @@ export default function Navbar() {
             {dark ? <Sun className="w-5 h-5" aria-hidden="true" /> : <Moon className="w-5 h-5" aria-hidden="true" />}
           </button>
           <a
-            href="https://app.cardgit.com"
+            href="https://app.cardgit.com/auth/signin"
             className="px-4 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-slate-200 dark:border-slate-700 rounded-xl hover:border-slate-300 dark:hover:border-slate-600 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
           >
             Login
@@ -214,7 +214,7 @@ export default function Navbar() {
 
           <div className="pt-3 border-t border-slate-200 dark:border-slate-700 flex flex-col gap-3">
             <a
-              href="https://app.cardgit.com"
+              href="https://app.cardgit.com/auth/signin"
               className="block text-center px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 font-medium text-[var(--text-primary)]"
             >
               Login
