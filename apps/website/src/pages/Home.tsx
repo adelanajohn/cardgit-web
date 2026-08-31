@@ -119,14 +119,14 @@ export default function Home() {
       />
 
       {/* ══ HERO ════════════════════════════════════════════ */}
-      <section className="relative bg-[var(--bg-page)]">
+      <section className="relative bg-[var(--bg-page)] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/80 via-white to-violet-50/60 dark:from-indigo-950/50 dark:via-slate-950 dark:to-violet-950/30 pointer-events-none" aria-hidden="true" />
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-indigo-400/15 dark:bg-indigo-600/10 rounded-full blur-3xl animate-blob pointer-events-none" aria-hidden="true" />
-        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-violet-400/15 dark:bg-violet-600/10 rounded-full blur-3xl animate-blob animate-delay-400 pointer-events-none" aria-hidden="true" />
+        <div className="absolute -top-32 -left-32 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-indigo-400/15 dark:bg-indigo-600/10 rounded-full blur-3xl animate-blob pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-1/2 -right-20 sm:right-0 w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] bg-violet-400/15 dark:bg-violet-600/10 rounded-full blur-3xl animate-blob animate-delay-400 pointer-events-none" aria-hidden="true" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14">
           {/* Side-by-side on ALL screen sizes — copy left, image right */}
-          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12 xl:gap-16">
 
             {/* Copy — takes more space on mobile */}
             <div className="w-full lg:flex-1 lg:min-w-0">
@@ -215,43 +215,43 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="flex-shrink-0 flex items-center justify-center relative w-full lg:w-auto"
+              className="flex-shrink-0 flex items-center justify-center relative w-full lg:w-auto max-w-full"
             >
               {/* Glow */}
               <div
-                className="absolute inset-0 rounded-full blur-3xl opacity-35 dark:opacity-20 pointer-events-none scale-125"
+                className="absolute inset-0 rounded-full blur-3xl opacity-35 dark:opacity-20 pointer-events-none scale-110"
                 style={{ background: 'radial-gradient(circle, #7c3aed 0%, #6366f1 60%, transparent 80%)' }}
                 aria-hidden="true"
               />
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative z-10 lg:[transform:rotate(3deg)]"
+                className="relative z-10"
               >
                 <img
                   src={cardgitHeroImg}
                   alt="CardGit digital business card profile showing QR code, social links, analytics, and booking features"
                   width="745"
                   height="727"
-                  className="w-[320px] sm:w-[420px] lg:w-[480px] h-auto rounded-2xl lg:rounded-3xl block mx-auto"
-                  style={{ filter: 'drop-shadow(0 32px 64px rgba(99,102,241,0.55)) drop-shadow(0 8px 24px rgba(124,58,237,0.4))' }}
+                  className="w-[280px] sm:w-[360px] lg:w-[420px] xl:w-[480px] h-auto rounded-2xl lg:rounded-3xl block mx-auto max-w-full"
+                  style={{ filter: 'drop-shadow(0 24px 48px rgba(99,102,241,0.4)) drop-shadow(0 8px 24px rgba(124,58,237,0.3))' }}
                   loading="eager"
                   decoding="sync"
                 />
               </motion.div>
               {/* Floating chips desktop only */}
               <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}
-                className="hidden lg:block absolute -left-8 top-[20%] z-20 bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-xl border border-indigo-100/60 dark:border-slate-700/60">
+                className="hidden xl:block absolute -left-8 top-[20%] z-20 bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-xl border border-indigo-100/60 dark:border-slate-700/60">
                 <p className="text-lg font-black text-indigo-600 dark:text-indigo-400 leading-none">847</p>
                 <p className="text-[10px] text-slate-500 mt-0.5 font-medium">Profile views</p>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.05 }}
-                className="hidden lg:block absolute -right-6 top-[45%] z-20 bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-xl border border-purple-100/60 dark:border-slate-700/60">
+                className="hidden xl:block absolute -right-6 top-[45%] z-20 bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-xl border border-purple-100/60 dark:border-slate-700/60">
                 <p className="text-lg font-black text-purple-600 dark:text-purple-400 leading-none">32</p>
                 <p className="text-[10px] text-slate-500 mt-0.5 font-medium">New leads</p>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }}
-                className="hidden lg:block absolute bottom-[5%] left-[10%] z-20 bg-emerald-500 rounded-xl px-3 py-2 shadow-lg shadow-emerald-500/30">
+                className="hidden xl:block absolute bottom-[5%] left-[10%] z-20 bg-emerald-500 rounded-xl px-3 py-2 shadow-lg shadow-emerald-500/30">
                 <p className="text-white text-xs font-bold">✓ Booked · Today 2pm</p>
               </motion.div>
             </motion.div>

@@ -12,9 +12,9 @@ export default function Layout() {
   }, [pathname])
 
   return (
-    <div className="flex flex-col min-h-screen bg-[var(--bg-page)]">
+    <div className="flex flex-col min-h-screen bg-[var(--bg-page)] overflow-x-hidden">
       <Navbar />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />
