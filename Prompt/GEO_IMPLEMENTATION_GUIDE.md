@@ -194,8 +194,13 @@ Added:
 ✅ **Zero impact on user experience:** React app works exactly as before  
 ✅ **SEO maintained:** Google still sees full React content  
 ✅ **GEO enabled:** LLMs can now read and understand CardGit  
+✅ **llms.txt enhanced:** Added Q&A format for common questions  
+✅ **Schema.org present:** FAQPage schema already implemented  
+❌ **BLOCKER:** Cloudflare is injecting rules that block AI crawlers
 
-**Result:** CardGit website is now GEO-ready and visible to AI agents! 🎉
+**Result:** CardGit website has perfect GEO content, but Cloudflare settings are blocking AI bots from accessing it! 🚨
+
+See `CLOUDFLARE_ROBOTS_FIX.md` for detailed instructions on fixing the Cloudflare blocker.
 
 ---
 

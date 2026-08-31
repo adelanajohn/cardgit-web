@@ -1501,15 +1501,15 @@ jobs:
 
 ## 13. INTEGRATION POINTS
 
-| Link | Destination |
-|------|-------------|
-| "Create Free Card" CTA | `https://app.cardgit.com/auth/signup` |
-| "Login" | `https://app.cardgit.com` |
-| "Book a Demo" | email `info@cardgit.com` or Calendly/booking link |
-| "Discover Events" | `https://events.cardgit.com/events` |
-| "Start Your Event" | `https://events.cardgit.com/register` |
-| "App Dashboard" | `https://app.cardgit.com/dashboard` |
-| "Explore Profiles" | `https://app.cardgit.com/dashboard/explore` |
+| Link                   | Destination                                       |
+| ------------------------| ---------------------------------------------------|
+| "Create Free Card" CTA | `https://app.cardgit.com/auth/signup`             |
+| "Login"                | `https://app.cardgit.com/auth/signin`             |
+| "Book a Demo"          | email `info@cardgit.com` or Calendly/booking link |
+| "Discover Events"      | `https://events.cardgit.com/events`               |
+| "Start Your Event"     | `https://events.cardgit.com/register`             |
+| "App Dashboard"        | `https://app.cardgit.com/dashboard`               |
+| "Explore Profiles"     | `https://app.cardgit.com/dashboard/explore`       |
 
 All external links: `target="_blank" rel="noopener noreferrer"`
 

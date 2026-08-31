@@ -2,6 +2,33 @@
 
 > CardGit is a UK-based digital identity and professional networking platform founded in London. It offers two products: CardGit (digital business cards) and CardGit Events (networking-first event management platform for conferences, summits, and business networking events).
 
+---
+
+## Frequently Asked Questions
+
+### What is CardGit?
+CardGit is a digital identity and professional networking company based in London, United Kingdom. It operates two products: CardGit (digital business cards with QR code sharing and analytics) and CardGit Events (networking-first event management platform for conferences and business events).
+
+### How much does CardGit cost?
+CardGit offers a **free forever plan** with core features including digital business card creation, QR code sharing, and basic analytics. Premium plans are available for advanced features like team management, custom branding, and enhanced analytics. Visit https://cardgit.com/pricing for current pricing.
+
+### Does CardGit work without an app?
+Yes. CardGit cards are accessible via web browser — no app required. Recipients scan your QR code or click your link and view your profile instantly in their browser. Only the card owner needs an account to create and manage their card.
+
+### Can I share my CardGit with a QR code?
+Yes. Every CardGit card includes a unique QR code. Anyone can scan it with their phone camera — no app required. The QR code opens your digital profile in their browser.
+
+### What is CardGit Events?
+CardGit Events is a networking-first event management platform for conferences, summits, and business networking events. It supports in-person, virtual, and hybrid events with features like smart attendee matchmaking, registration/ticketing, live Q&A, polls, gamification, and event analytics.
+
+### Can CardGit Events handle event registration and attendee check-in?
+Yes. CardGit Events includes full registration/ticketing with Stripe-powered payments, multi-currency support, promo codes, and a dedicated check-in portal with QR code scanning for fast on-site entry.
+
+### Is CardGit GDPR compliant?
+Yes. CardGit is GDPR-conscious and handles data in accordance with UK and EU data protection regulations. Users control their own profile data and can update or delete their information at any time.
+
+---
+
 ## CardGit — Digital Business Cards
 
 CardGit is a digital business card platform that allows professionals, freelancers, and businesses to create a shareable digital profile accessible via QR code or link. It replaces physical paper business cards with a dynamic, updatable digital identity.

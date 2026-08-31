@@ -1,8 +1,6 @@
-User-agent: *
-Allow: /
-Sitemap: https://cardgit.com/sitemap.xml
-
 # === AI / LLM CRAWLERS — explicitly allowed ===
+# These rules MUST come before Cloudflare managed content to take precedence
+
 User-agent: GPTBot
 Allow: /
 
@@ -30,6 +28,9 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
@@ -38,6 +39,14 @@ Allow: /
 
 User-agent: YouBot
 Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# General rules
+User-agent: *
+Allow: /
+Sitemap: https://cardgit.com/sitemap.xml
 
 # Block only internal app routes from all crawlers
 User-agent: *
