@@ -1,7 +1,11 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ReactGA from 'react-ga4'
 import Layout from '@/components/layout/Layout'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+
+ReactGA.initialize(import.meta.env.VITE_GA_MEASUREMENT_ID)
 
 // Lazy-load all routes for code splitting
 const Home = lazy(() => import('@/pages/Home'))
@@ -30,6 +34,7 @@ const NotFound = lazy(() => import('@/pages/NotFound'))
 export default function App() {
   return (
     <BrowserRouter>
+      <GoogleAnalytics />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           <Route element={<Layout />}>

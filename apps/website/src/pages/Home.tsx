@@ -310,7 +310,7 @@ export default function Home() {
                 </p>
 
                 <div className="grid grid-cols-2 gap-2 mb-5">
-                  {['QR code sharing', 'Lead capture', 'Analytics', 'Team mgmt'].map((f) => (
+                  {['QR code sharing', 'Lead capture', 'Analytics', 'Team management'].map((f) => (
                     <div key={f} className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
                       <CheckCircle className="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" aria-hidden="true" />
                       {f}
