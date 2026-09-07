@@ -1,8 +1,8 @@
 import type { ContactFormData, ContactApiResponse } from '@/types/contact'
 
-const CONTACT_URL =
-  import.meta.env.VITE_CONTACT_API_URL || 'http://localhost:3000/api/v1/contact'
-const CONTACT_KEY = import.meta.env.VITE_CONTACT_API_KEY || ''
+// Always routes through the Pages Function proxy (/api/v1/contact).
+// The API key is held server-side as a Cloudflare secret — never in the bundle.
+const CONTACT_URL = '/api/v1/contact'
 
 export const contactApi = {
   /**
@@ -15,7 +15,6 @@ export const contactApi = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-API-Key': CONTACT_KEY,
       },
       body: JSON.stringify({
         ...data,

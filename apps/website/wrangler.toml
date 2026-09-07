@@ -1,0 +1,10 @@
+name = "cardgit-website"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-23"
+
+# Secrets are NOT stored here — they are set via:
+#   wrangler secret put CONTACT_API_KEY
+#   wrangler secret put CONTACT_API_URL   (optional override)
+#
+# Or in the Cloudflare dashboard:
+#   Pages > cardgit-website > Settings > Environment variables > Add secret
